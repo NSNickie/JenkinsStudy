@@ -1,9 +1,10 @@
 pipeline {
-    agent { docker { image 'node:16.17.1-alpine' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'node --version'
+    agent any
+    stages{
+        stage('Hello'){
+            steps{
+                sh 'echo Hello World'
+                echo 'Build number is ${currentBuild.number}'
             }
         }
     }
